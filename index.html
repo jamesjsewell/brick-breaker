@@ -7,6 +7,14 @@
   </head>
   <body style="text-align: center">
     <style>
+      #page-container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
       #canvas-container {
         padding-top: 75%;
         position: relative;
@@ -25,9 +33,11 @@
         height: 100%;
       }
     </style>
-    <div id="canvas-container">
-      <div id="canvas-wrapper">
-        <canvas id="unity-canvas"></canvas>
+    <div id="page-container">
+      <div id="canvas-container">
+        <div id="canvas-wrapper">
+          <canvas id="unity-canvas"></canvas>
+        </div>
       </div>
     </div>
     <script src="Build/build.loader.js"></script>
@@ -41,6 +51,27 @@
         productName: "brick_breaker",
         productVersion: "1.0",
       });
+
+      function setSize(){
+        var container = document.querySelector("#page-container")
+
+        if(window.innerHeight > window.innerWidth){
+          container.style.minWidth = window.innerWidth + "px";
+          container.style.maxHeight = window.innerHeight + "px";
+        }else{
+          container.style.maxWidth = window.innerHeight + "px";
+          container.style.maxHeight = window.innerWidth + "px";
+        }
+
+      }
+
+      setSize()
+
+      window.addEventListener("resize", setSize);
+
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        window.alert("Works on Desktop Browsers Only")
+      }
     </script>
   </body>
 </html>

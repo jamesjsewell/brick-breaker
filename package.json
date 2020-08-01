@@ -1,0 +1,24 @@
+{
+  "name": "brick_breaker_build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesjsewell/brick_breaker_build.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesjsewell/brick_breaker_build/issues"
+  },
+  "homepage": "https://github.com/jamesjsewell/brick_breaker_build#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-static-gzip": "^2.0.7",
+    "nodemon": "^2.0.4"
+  }
+}
